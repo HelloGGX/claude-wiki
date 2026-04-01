@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "qwen3:8b",
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "ollama",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_BASE_URL": "http://localhost:11434",
+    "OLLAMA_KEEP_ALIVE": "-1",
+    "ANTHROPIC_CUSTOM_MODEL_OPTION": "qwen3:8b",
+  "ANTHROPIC_CUSTOM_MODEL_OPTION_NAME": "Qwen3 8B 本地",
+  "ANTHROPIC_CUSTOM_MODEL_OPTION_DESCRIPTION": "本地 Ollama 模型"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npm *)",
+      "Bash(git *)",
+      "Bash(python *)"
+    ],
+    "deny": [
+      "Read(./.env*)",
+      "Read(./secrets/**)",
+      "Bash(rm -rf *)"
+    ],
+    "ask": [
+      "Bash(sudo *)"
+    ]
+  }
+}
