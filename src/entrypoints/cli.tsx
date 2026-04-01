@@ -1,5 +1,14 @@
 import { feature } from 'bun:bundle';
-import '../env-init.js';
+
+// Define MACRO global for development (normally injected by bun build --define)
+if (typeof MACRO === 'undefined') {
+  (globalThis as any).MACRO = {
+    VERSION: '2.1.87-dev',
+    BUILD_TIME: new Date().toISOString(),
+    PACKAGE_URL: 'claude-code-source-snapshot',
+    FEEDBACK_CHANNEL: 'github',
+  };
+}
 
 // Bugfix for corepack auto-pinning, which adds yarnpkg to peoples' package.jsons
 // eslint-disable-next-line custom-rules/no-top-level-side-effects
